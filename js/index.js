@@ -54,10 +54,25 @@ document.querySelector('a:nth-of-type(4)').textContent = siteContent["nav"]["nav
 document.querySelector('a:nth-of-type(5)').textContent = siteContent["nav"]["nav-item-5"]
 document.querySelector('a:nth-of-type(6)').textContent = siteContent["nav"]["nav-item-6"]
 
-const domText1 = siteContent["cta"]["h1"]
-const domText2 = domText1.split(' ');
+function addTextNode(text) {
+  const newText = document.createTextNode(text);
+  const domText = siteContent["cta"]["h1"];
 
-document.querySelector('h1').textContent = domText2
+  domText.appendChild(newText);
+}
+
+
+// const domText1 = siteContent["cta"]["h1"]
+// const domText2 = domText1.split(' ');
+// domText2.forEach(str => {
+//   const lb = document.createElement('BR');
+//   lb.textContent = str;
+//   document.querySelector('h1').appendChild(lb);
+// })
+
+document.querySelector('h1').innerHTML = "DOM<br/> Is<br/> Awesome"
+// document.querySelector('h1').textContent = domText2[1]
+// document.querySelector('h1').textContent = domText2[2]
 
 document.querySelector('button').textContent = 'Get Started'
 
@@ -79,7 +94,7 @@ paraElement[2].textContent = siteContent["main-content"]["services-content"]
 paraElement[3].textContent = siteContent["main-content"]["product-content"]
 paraElement[4].textContent = siteContent["main-content"]["vision-content"]
 
-paraElement[5].textContent = siteContent["contact"]["address"]
+paraElement[5].innerHTML = "123 Way 456 Street<br/> Somewhere, USA"
 paraElement[6].textContent = siteContent["contact"]["phone"]
 paraElement[7].textContent = siteContent["contact"]["email"]
 
