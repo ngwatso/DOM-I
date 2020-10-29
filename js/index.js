@@ -54,11 +54,14 @@ document.querySelector('a:nth-of-type(4)').textContent = siteContent["nav"]["nav
 document.querySelector('a:nth-of-type(5)').textContent = siteContent["nav"]["nav-item-5"]
 document.querySelector('a:nth-of-type(6)').textContent = siteContent["nav"]["nav-item-6"]
 
-document.querySelector('h1').textContent = siteContent["cta"]["h1"]
+const domText1 = siteContent["cta"]["h1"]
+const domText2 = domText1.split(' ');
+
+document.querySelector('h1').textContent = domText2
 
 document.querySelector('button').textContent = 'Get Started'
 
-const h4Element = document.querySelectorAll('h4')
+const h4Element = document.querySelectorAll('h4');
 
 h4Element[0].textContent = siteContent["main-content"]["features-h4"]
 h4Element[1].textContent = siteContent["main-content"]["about-h4"]
@@ -68,7 +71,7 @@ h4Element[4].textContent = siteContent["main-content"]["vision-h4"]
 
 h4Element[5].textContent = siteContent["contact"]["contact-h4"]
 
-const paraElement = document.querySelectorAll('p')
+const paraElement = document.querySelectorAll('p');
 
 paraElement[0].textContent = siteContent["main-content"]["features-content"]
 paraElement[1].textContent = siteContent["main-content"]["about-content"]
@@ -82,3 +85,15 @@ paraElement[7].textContent = siteContent["contact"]["email"]
 
 paraElement[8].textContent = siteContent["footer"]["copyright"]
 
+const anchor = document.querySelectorAll('nav a');
+anchor.forEach(a => a.style.color = "green");
+
+const newItem1 = document.createElement('a');
+newItem1.textContent = 'Last Link'
+document.querySelector('nav').appendChild(newItem1);
+newItem1.style.color = "green";
+
+const newItem2 = document.createElement('a');
+newItem2.textContent = 'First Link'
+document.querySelector('nav').prepend(newItem2);
+newItem2.style.color = "green";
